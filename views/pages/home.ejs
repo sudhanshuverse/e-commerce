@@ -1,5 +1,250 @@
 <%- include('../partials/header') %>
 
-<h1 class="bg-amber-400">Welcome to Home Page</h1>
+  <div class="px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
+
+    <!-- HERO -->
+    <div class="relative bg-[#e8edf8] rounded-3xl mt-6 mb-8 overflow-hidden">
+      <div class="flex flex-col lg:flex-row items-center min-h-[420px] lg:min-h-[480px]">
+
+        <!-- Left: Dots + Text -->
+        <div class="flex items-center lg:w-[45%] px-8 lg:px-14 py-10 lg:py-0">
+          <div class="hidden lg:flex flex-col gap-4 mr-10">
+            <span class="block rounded-full w-3 h-3 bg-blue-500 ring-4 ring-blue-200"></span>
+            <span class="block rounded-full w-2.5 h-2.5 bg-blue-300"></span>
+            <span class="block rounded-full w-2.5 h-2.5 bg-blue-300"></span>
+          </div>
+          <div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+              SHOP COMPUTER<br />&amp; ACCESSORIES
+            </h1>
+            <p class="text-sm sm:text-base text-gray-600 mt-4 max-w-md leading-relaxed">
+              Shop Laptops desktops, Monitors, Laptops, pc gaming, hard drives and electronics accessories and more.
+            </p>
+            <a href="/collection">
+              <button class="mt-6 px-6 py-2.5 border-2 border-gray-900 rounded-full text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition cursor-pointer">
+                View more
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Product Card -->
+        <div class="lg:w-[22%] flex justify-center px-4 pb-6 lg:pb-0">
+          <div class="bg-white rounded-2xl p-4 shadow-sm w-full max-w-[220px]">
+            <p class="text-[10px] font-bold text-gray-800 uppercase tracking-wider">WIRELESS HEADPHONES</p>
+            <h3 class="text-sm font-bold text-gray-900 mt-1 leading-snug">JBL T460BT Black Headphones</h3>
+            <div class="flex items-center gap-1 mt-2">
+              <i class="fa fa-star text-yellow-400 text-xs"></i>
+              <i class="fa fa-star text-yellow-400 text-xs"></i>
+              <i class="fa fa-star text-yellow-400 text-xs"></i>
+              <i class="fa fa-star text-yellow-400 text-xs"></i>
+              <i class="fa fa-star text-yellow-400 text-xs"></i>
+              <span class="text-xs text-gray-400 ml-1">1311 Reviews</span>
+            </div>
+            <p class="text-lg font-bold text-gray-900 mt-2">$125.00</p>
+            <a href="/products" class="flex items-center gap-2 text-xs text-gray-600 mt-2 hover:text-black transition">
+              View More <span class="text-gray-400">———→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Hero Image + Discount Badge -->
+        <div class="lg:w-[33%] relative flex justify-center items-center py-6 lg:py-0">
+          <div
+            class="absolute top-4 right-6 lg:top-6 lg:right-10 bg-yellow-400 text-gray-900 font-bold text-xs w-14 h-14 flex flex-col items-center justify-center z-10 shadow-md"
+            style="clip-path: polygon(50% 0%,61% 11%,75% 3%,78% 19%,95% 21%,88% 36%,100% 50%,88% 64%,95% 79%,78% 81%,75% 97%,61% 89%,50% 100%,39% 89%,25% 97%,22% 81%,5% 79%,12% 64%,0% 50%,12% 36%,5% 21%,22% 19%,25% 3%,39% 11%)"
+          >
+            <span class="text-sm leading-none">40%</span>
+            <span class="text-[10px] leading-none">OFF</span>
+          </div>
+          <img src="/assets/images/headphone.png" alt="JBL T460BT Black Headphones" class="w-64 h-64 lg:w-96 lg:h-96 object-contain drop-shadow-2xl"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO SECTION -->
+    <section class="mt-8 mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+
+        <div class="bg-[#f0f0f0] rounded-full flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3 cursor-pointer hover:shadow-md transition">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+            <i class="fa fa-user text-xl"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="font-semibold text-xs sm:text-sm text-gray-900 truncate">Hi User</p>
+            <p class="text-[10px] sm:text-xs text-gray-500 truncate">top Recommendations for you 🔥</p>
+          </div>
+        </div>
+
+        <div class="bg-[#f0f0f0] rounded-full flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3 cursor-pointer hover:shadow-md transition">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+            <i class="fa fa-box-open text-xl text-amber-600"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="font-semibold text-xs sm:text-sm text-gray-900 truncate">Your Orders</p>
+            <p class="text-[10px] sm:text-xs text-gray-500 truncate underline decoration-orange-400 decoration-2 underline-offset-2">View your orders</p>
+          </div>
+        </div>
+
+        <div class="bg-[#f0f0f0] rounded-full flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3 cursor-pointer hover:shadow-md transition">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+            <i class="fa fa-headphones text-xl"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="font-semibold text-xs sm:text-sm text-gray-900 truncate">Electronics</p>
+            <p class="text-[10px] sm:text-xs text-gray-500 truncate">Big Save 20%</p>
+          </div>
+        </div>
+
+        <div class="bg-[#f0f0f0] rounded-full flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3 cursor-pointer hover:shadow-md transition">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+            <i class="fa fa-blender text-xl"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="font-semibold text-xs sm:text-sm text-gray-900 truncate">Home &amp; Kitchen</p>
+            <p class="text-[10px] sm:text-xs text-gray-500 truncate">Big Save 20%</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATEGORY -->
+    <div>
+      <h1 class="text-xl font-bold mb-6 mt-8">Shop by Categories</h1>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <% categories.forEach(function(cat) { %>
+        <a href="/products?category=<%= cat.name %>" class="category-card relative rounded-2xl overflow-hidden cursor-pointer h-40 sm:h-52 block">
+          <img src="<%= cat.image %>" alt="<%= cat.label %>" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <span class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-white/90 text-gray-900 text-[10px] sm:text-xs font-semibold px-3 sm:px-4 py-1 sm:py-1.5 rounded-full">
+            <%= cat.label %>
+          </span>
+        </a>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- BANNER -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+      <div class="bg-[#d4e4f7] rounded-2xl p-6 flex items-center justify-between min-h-[140px]">
+        <div>
+          <h3 class="text-xl font-bold text-gray-900">Shoorashop Basics</h3>
+          <a href="/products" class="inline-flex items-center gap-2 text-sm text-gray-700 mt-2 hover:text-black transition">
+            Shop now <i class="fa fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+        <div class="text-5xl">🛍️</div>
+      </div>
+      <div class="bg-[#fce4d6] rounded-2xl p-6 flex items-center justify-between min-h-[140px]">
+        <div>
+          <h3 class="text-xl font-bold text-gray-900">Deals &amp; Promotion</h3>
+          <a href="/products" class="inline-flex items-center gap-2 text-sm text-gray-700 mt-2 hover:text-black transition">
+            Shop now <i class="fa fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+        <div class="text-5xl">🎁</div>
+      </div>
+    </div>
+
+    <!-- DELIVER BANNER -->
+    <div class="bg-[#f0f0f0] rounded-2xl mt-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+          ShooraShop Delivers<br />to You
+        </h2>
+        <a href="/products" class="inline-block mt-4 px-6 py-2 border-2 border-gray-900 rounded-full text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition">
+          Shop now
+        </a>
+      </div>
+      <div class="mt-6 md:mt-0 text-6xl sm:text-7xl">📦🐶</div>
+    </div>
+
+     <!-- LAST VIEWED ROW 1 -->
+    <div class="mt-10">
+      <h2 class="text-lg font-bold mb-4">Last Viewed</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <% lastViewed.slice(0, 4).forEach(function(product) { %>
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer">
+          <div class="h-44 bg-gray-50 flex items-center justify-center p-4">
+            <img src="<%= product.img %>" alt="<%= product.name %>" class="h-full w-full object-contain" />
+          </div>
+          <div class="p-3">
+            <p class="text-xs text-gray-500 truncate"><%= product.category %></p>
+            <h3 class="text-sm font-semibold text-gray-900 mt-0.5 truncate"><%= product.name %></h3>
+            <p class="text-sm font-bold text-gray-900 mt-1">$<%= product.price.toFixed(2) %></p>
+            <a href="/products/<%= product.id %>" class="text-xs text-blue-600 hover:underline mt-1 inline-block">View Details</a>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- LAST VIEWED ROW 2 -->
+    <div class="mt-10">
+      <h2 class="text-lg font-bold mb-4">Last Viewed</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <% lastViewed.slice(4, 8).forEach(function(product) { %>
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer">
+          <div class="h-44 bg-gray-50 flex items-center justify-center p-4">
+            <img src="<%= product.img %>" alt="<%= product.name %>" class="h-full w-full object-contain" />
+          </div>
+          <div class="p-3">
+            <p class="text-xs text-gray-500 truncate"><%= product.category %></p>
+            <h3 class="text-sm font-semibold text-gray-900 mt-0.5 truncate"><%= product.name %></h3>
+            <p class="text-sm font-bold text-gray-900 mt-1">$<%= product.price.toFixed(2) %></p>
+            <a href="/products/<%= product.id %>" class="text-xs text-blue-600 hover:underline mt-1 inline-block">View Details</a>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- COMFY STYLE -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 mb-10">
+
+      <!-- Styles for Her -->
+      <div class="bg-[#f3eded] rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 min-h-[200px]">
+        <div class="flex-1">
+          <h3 class="text-lg font-bold text-gray-900">Comfy Styles for Her</h3>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+            Shop shoorashop Fashion including clothing shoes, jwelly, watches, page and more
+          </p>
+          <a href="/products" class="inline-flex items-center gap-2 text-sm text-gray-700 mt-3 hover:text-black transition">
+            see more <i class="fa fa-arrow-right text-xs"></i>
+          </a>
+          <div class="mt-4 bg-white/70 rounded-xl px-3 py-2 inline-block">
+            <p class="text-sm font-bold">Top Handbags</p>
+            <p class="text-xs text-gray-500">Big save 30% off</p>
+          </div>
+        </div>
+        <% if (fashionImg) { %>
+        <img src="/assets/images/fashion.jpg" alt="Fashion" class="w-28 h-28 object-cover rounded-xl flex-shrink-0" />
+        <% } %>
+      </div>
+
+      <!-- STYLE FOR HIM -->
+      <div class="bg-[#f3eded] rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 min-h-[200px]">
+        <div class="flex-1">
+          <h3 class="text-lg font-bold text-gray-900">Comfy Styles for Him</h3>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">
+            Shop shoorashop Fashion including clothing shoes, jwelly, watches, page and more
+          </p>
+          <a href="/products" class="inline-flex items-center gap-2 text-sm text-gray-700 mt-3 hover:text-black transition">
+            see more <i class="fa fa-arrow-right text-xs"></i>
+          </a>
+          <div class="mt-4 bg-white/70 rounded-xl px-3 py-2 inline-block">
+            <p class="text-sm font-bold">Top Watches</p>
+            <p class="text-xs text-gray-500">Big save 30% off</p>
+          </div>
+        </div>
+        <% if (accessoryImg) { %>
+        <img src="/assets/images/phone_cover.jpg" alt="Accessories" class="w-28 h-28 object-cover rounded-xl flex-shrink-0" />
+        <% } %>
+      </div>
+
+    </div>
+
+  </div>
 
 <%- include('../partials/footer') %>

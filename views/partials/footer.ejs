@@ -1,8 +1,66 @@
-<hr>
+<!-- footer.ejs -->
 
-<footer>
-    <p>© 2026 My Store</p>
-</footer>
+<hr class="border-gray-200 mb-5 mt-15" />
+
+<!-- Footer: 3-column layout -->
+<div class="w-full max-w-[1400px] mx-auto flex justify-between gap-20 md:gap-10 mt-10 mb-10 flex-wrap pr-20">
+  <!-- Column 1: Brand info -->
+  <div>
+    <h1 class="text-xl font-bold mb-5">ShooraShop</h1>
+    <p class="max-w-xl text-sm text-gray-600">
+      ShooraShop is a modern multi-category e-commerce platform designed
+      to make online shopping simple, affordable, and reliable.
+    </p>
+  </div>
+
+  <!-- Column 2: Shop links -->
+  <div>
+    <h1 class="text-sm font-bold mb-5 uppercase tracking-wide">Shop</h1>
+    <ul class="flex flex-col gap-2 text-sm text-gray-600">
+      <li><a href="/products" class="hover:text-black transition block w-40">All Products</a></li>
+      <li><a href="/products?category=Electronics" class="hover:text-black transition block w-40">Electronics</a></li>
+      <li><a href="/products?category=Fashion" class="hover:text-black transition block w-40">Clothing</a></li>
+      <li><a href="/products?category=Accessories" class="hover:text-black transition block w-40">Accessories</a></li>
+    </ul>
+  </div>
+
+  <!-- Column 3: Company links -->
+  <div>
+    <h1 class="text-sm font-bold mb-5 uppercase tracking-wide">Company</h1>
+    <ul class="flex flex-col gap-2 text-sm text-gray-600">
+      <li><a href="/about"   class="hover:text-black transition block">About Us</a></li>
+      <li><a href="/careers" class="hover:text-black transition block">Careers</a></li>
+      <li><a href="/contact" class="hover:text-black transition block">Contact</a></li>
+      <li><a href="/support" class="hover:text-black transition block">Support</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<hr class="border-gray-200 mb-5" />
+
+<!-- Bottom bar: copyright + social icons -->
+<div class="text-sm text-gray-500 text-center sm:flex justify-between items-center pb-10">
+  &copy; <%= new Date().getFullYear() %> ShooraShop. All rights reserved.
+
+  <ul class="flex gap-5 text-xl justify-center mt-5 sm:mt-0">
+    <li>
+      <a href="#" class="hover:text-black transition text-gray-500">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="hover:text-black transition text-gray-500">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="hover:text-black transition text-gray-500">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 
 </body>
 </html>
