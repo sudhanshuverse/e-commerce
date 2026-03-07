@@ -14,7 +14,7 @@ import headphoneImg from "../assets/Images/hero.png"; // Hero product image (PNG
 // Slide data array - each object represents one carousel slide
 const slides = [
   {
-    heading: "SHOP COMPUTER\n& ACCESSORIES",
+    heading: "SHOP COMPUTER & ACCESSORIES",
     description:
       "Shop Laptops desktops, Monitors , Laptops,pc gaming, hardrives and electronics accessories and more.",
     productLabel: "WIRELESS HEADPHONES",
@@ -33,9 +33,9 @@ const Hero = () => {
 
   return (
     <div className="relative bg-[#e8edf8] rounded-3xl mt-6 mb-8 overflow-hidden">
-      <div className="flex flex-col lg:flex-row items-center min-h-[420px] lg:min-h-[480px]">
+      <div className="flex flex-col lg:flex-row items-center min-h-105 lg:min-h-120">
         {/* Left: Dots + Text */}
-        <div className="flex items-center lg:w-[45%] px-8 lg:px-14 py-10 lg:py-0">
+        <div className="flex items-center w-full lg:w-[40%] px-8 lg:px-14 py-10 lg:py-0">
           {/* Dot indicators */}
           <div className="hidden lg:flex flex-col gap-4 mr-10">
             {[0, 1, 2].map((i) => (
@@ -65,9 +65,33 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Middle: Product Card */}
-        <div className="lg:w-[22%] flex justify-center px-4 pb-6 lg:pb-0">
-          <div className="bg-white rounded-2xl p-4 shadow-sm w-full max-w-[220px]">
+        {/* Right: Product Showcase (Card + Image + Badge) */}
+        <div className="relative w-full z-0 lg:w-[60%] flex flex-col lg:flex-row items-center justify-center lg:justify-end px-6 sm:px-8 lg:px-4 pb-8 lg:pb-0 lg:pr-14 xl:pr-16 gap-3 sm:gap-5 lg:gap-0">
+          <div className="relative order-1 lg:order-2 z-20 pointer-events-none">
+            {/* Discount badge */}
+            <div
+              className="absolute top-2 right-3 sm:top-4 sm:right-4 lg:top-4 lg:right-4 bg-yellow-400 text-white font-bold text-sm w-16 h-16 lg:w-20 lg:h-20 rounded-full flex flex-col items-center justify-center z-10 shadow-md"
+              style={{
+                clipPath:
+                  "polygon(50% 0%, 61% 11%, 75% 3%, 78% 19%, 95% 21%, 88% 36%, 100% 50%, 88% 64%, 95% 79%, 78% 81%, 75% 97%, 61% 89%, 50% 100%, 39% 89%, 25% 97%, 22% 81%, 5% 79%, 12% 64%, 0% 50%, 12% 36%, 5% 21%, 22% 19%, 25% 3%, 39% 11%)",
+              }}
+            >
+              <span className="text-sm lg:text-base leading-none">
+                {slide.discount}
+              </span>
+              <span className="text-[10px] lg:text-xs leading-none">OFF</span>
+            </div>
+
+            <img
+              src={slide.image}
+              alt={slide.productName}
+              className="lg:w-64 lg:h-64 sm:w-92 sm:h-92 lg:w-120 lg:h-120 xl:w-112 xl:h-112
+               object-contain drop-shadow-2xl scale-105 sm:scale-110 lg:scale-125
+               xl:scale-110 origin-center pointer-events-auto"
+            />
+          </div>
+
+          <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm w-full max-w-xs sm:max-w-sm lg:max-w-55 order-2 lg:order-1 z-10 lg:-mr-20 xl:-mr-24 lg:mt-10">
             <p className="text-[10px] font-bold text-gray-800 uppercase tracking-wider">
               {slide.productLabel}
             </p>
@@ -89,34 +113,13 @@ const Hero = () => {
               to="/products"
               className="flex items-center gap-2 text-xs text-gray-600 mt-2 hover:text-black transition"
             >
-              View More <span className="text-gray-400">———→</span>
+              View More <span className="text-gray-400">---&gt;</span>
             </Link>
           </div>
         </div>
 
-        {/* Right: Hero Image + Badge */}
-        <div className="lg:w-[33%] relative flex justify-center items-center py-6 lg:py-0">
-          {/* Discount badge */}
-          <div
-            className="absolute top-4 right-6 lg:top-6 lg:right-10 bg-yellow-400 text-gray-900 font-bold text-xs w-14 h-14 rounded-full flex flex-col items-center justify-center z-10 shadow-md"
-            style={{
-              clipPath:
-                "polygon(50% 0%, 61% 11%, 75% 3%, 78% 19%, 95% 21%, 88% 36%, 100% 50%, 88% 64%, 95% 79%, 78% 81%, 75% 97%, 61% 89%, 50% 100%, 39% 89%, 25% 97%, 22% 81%, 5% 79%, 12% 64%, 0% 50%, 12% 36%, 5% 21%, 22% 19%, 25% 3%, 39% 11%)",
-            }}
-          >
-            <span className="text-sm leading-none">{slide.discount}</span>
-            <span className="text-[10px] leading-none">OFF</span>
-          </div>
-
-          <img
-            src={slide.image}
-            alt={slide.productName}
-            className="w-64 h-64 lg:w-96 lg:h-96 object-contain drop-shadow-2xl"
-          />
-        </div>
-
         {/* Right arrow */}
-        <button className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-md transition cursor-pointer">
+        <button className="hidden lg:flex absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full items-center justify-center shadow-md transition cursor-pointer">
           <FaChevronRight className="text-gray-600 text-sm" />
         </button>
       </div>

@@ -51,11 +51,11 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex items-center">
           <ul className="flex gap-6 text-sm text-gray-700 items-center">
             <Link to={"/"}>
               <li className="cursor-pointer hover:text-black transition flex items-center gap-1">
-                <span className="text-xs">⊞</span> ALL
+                <span className="text-lg mb-1">⊞</span> ALL
               </li>
             </Link>
             <Link to={"/products"}>
@@ -157,9 +157,7 @@ const Navbar = () => {
               </li>
             </Link>
             <Link to={"/sign-in"} onClick={toggleMenu}>
-              <li className="cursor-pointer py-2 hover:text-black">
-                Sign In
-              </li>
+              <li className="cursor-pointer py-2 hover:text-black">Sign In</li>
             </Link>
           </ul>
         </div>
