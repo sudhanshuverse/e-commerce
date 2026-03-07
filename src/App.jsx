@@ -4,16 +4,16 @@
 // ==========================================
 
 import "./App.css"; // Global styles & Tailwind imports
-import Navbar from "./Components/Navbar"; // Top navigation bar
-import Cart from "./Pages/Cart"; // Shopping cart page
-import Home from "./Pages/Home"; // Homepage
+import Navbar from "./components/Navbar"; // Top navigation bar
+import Cart from "./pages/Cart"; // Shopping cart page
+import Home from "./pages/Home"; // Homepage
 import { Routes, Route } from "react-router"; // Client-side routing
-import ProductDetail from "./Pages/ProductDetail"; // Single product view
-import Footer from "./Components/Footer"; // Site footer
-import Products from "./Pages/Products"; // Products listing page
-import About from "./Pages/About"; // About us page
-import SignUp from "./Pages/SignUp"; // User registration page
-import SignIn from "./Pages/SignIn"; // User login page
+import ProductDetail from "./pages/ProductDetail"; // Single product view
+import Footer from "./components/Footer"; // Site footer
+import Products from "./pages/Products"; // Products listing page
+import About from "./pages/About"; // About us page
+import SignUp from "./pages/SignUp"; // User registration page
+import SignIn from "./pages/SignIn"; // User login page
 
 function App() {
   return (
