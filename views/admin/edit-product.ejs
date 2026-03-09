@@ -1,0 +1,123 @@
+<%- include('../partials/header') %>
+
+    <div class="min-h-screen bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+            <!-- Page Header -->
+            <div class="mb-8">
+                <a href="/admin/products"
+                    class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-indigo-600 transition mb-4">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back to Products
+                </a>
+                <div class="flex items-center gap-3">
+                    <span class="w-1 h-8 bg-indigo-500 rounded-full"></span>
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-gray-400">Dashboard</p>
+                        <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">
+                            Edit <span class="text-indigo-600">Product</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Preview Strip -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 mb-6 flex items-center gap-4">
+                <img src="<%= product.img %>" alt="<%= product.name %>"
+                    class="w-16 h-16 rounded-xl object-cover border border-gray-100 flex-shrink-0" />
+                <div class="min-w-0">
+                    <p class="font-semibold text-gray-900 text-sm truncate">
+                        <%= product.name %>
+                    </p>
+                    <p class="text-xs text-gray-400 mt-0.5">
+                        <%= product.category %>
+                    </p>
+                </div>
+                <div class="ml-auto flex-shrink-0">
+                    <span class="bg-indigo-50 text-indigo-600 font-bold text-sm px-3 py-1.5 rounded-xl">
+                        $<%= product.price %>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8">
+
+                <form action="/admin/update-product/<%= product._id %>" method="POST" class="space-y-6">
+
+                    <!-- Product Name -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                            Product Name
+                        </label>
+                        <input name="name" value="<%= product.name %>"
+                            class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition" />
+                    </div>
+
+                    <!-- Price + Category -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                                Price ($)
+                            </label>
+                            <div class="relative">
+                                <span
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm font-semibold">$</span>
+                                <input name="price" type="number" value="<%= product.price %>"
+                                    class="w-full bg-gray-50 border border-gray-200 rounded-xl pl-8 pr-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                                Category
+                            </label>
+                            <input name="category" value="<%= product.category %>"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition" />
+                        </div>
+                    </div>
+
+                    <!-- Image URL -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                            Image URL
+                        </label>
+                        <input name="img" value="<%= product.img %>"
+                            class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition" />
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                            Description
+                        </label>
+                        <textarea name="description" rows="4"
+                            class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition resize-none"><%= product.description %></textarea>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-100"></div>
+
+                    <!-- Submit -->
+                    <div class="flex items-center justify-between">
+                        <a href="/admin/products" class="text-sm text-gray-400 hover:text-gray-600 transition">
+                            Cancel
+                        </a>
+                        <button type="submit"
+                            class="inline-flex items-center gap-2 px-8 py-3 bg-indigo-600 text-white text-sm font-semibold rounded-xl shadow-md hover:bg-indigo-700 active:scale-95 transition-all duration-150">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Update Product
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
