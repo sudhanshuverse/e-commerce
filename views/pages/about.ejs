@@ -1,98 +1,135 @@
 <%- include('../partials/header') %>
 
-<main style="width: 100%; padding: 0 1rem;">
-  <div style="width: 100%; max-width: 1400px; margin-inline: auto;">
+  <main class="w-full px-4">
 
-    <!-- Heading -->
-    <div style="display: flex; align-items: center; justify-content: center; font-size: clamp(1.5rem, 8vw, 2.5rem); text-transform: uppercase; color: #555; padding: 2rem 1rem; gap: 0.5rem;">
-      <span>About <span style="color: black; font-weight: 400;">US</span></span>
-      <span style="width: 50px; height: 50px;">
-        <img src="/assets/icons/hero-first-icon.svg" alt="Line Icon" style="width: 100%; height: 100%;" />
-      </span>
-    </div>
+    <div class="w-full max-w-[1400px] mx-auto">
 
-    <!-- First Section: Image + Text -->
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 2rem 0; flex-wrap: wrap;">
+      <!-- Heading -->
+      <div
+        class="flex items-center justify-center text-[clamp(1.5rem,8vw,2.5rem)] uppercase text-gray-600 py-8 px-4 gap-2">
+        <span>About <span class="text-black font-normal">US</span></span>
 
-      <!-- Image -->
-      <div style="width: 100%; max-width: 500px;">
-        <img src="/assets/images/about_img.png" alt="About Us" style="width: 100%; height: 100%;" />
+        <span class="w-[50px] h-[50px]">
+          <img src="/assets/icons/hero-first-icon.svg" alt="Line Icon" class="w-full h-full">
+        </span>
       </div>
 
-      <!-- Text -->
-      <div style="width: 100%; max-width: 750px; display: flex; flex-direction: column; gap: 2rem; line-height: 1.5rem; color: #555;">
-        <p>
-          Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online.
-          Our journey began with a simple idea: to provide a platform where customers can easily discover, explore,
-          and purchase a wide range of products from the comfort of their homes.
-          <br /><br />
-          Since our inception, we've worked tirelessly to curate a diverse selection of high-quality products that
-          cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer
-          an extensive collection sourced from trusted brands and suppliers.
-        </p>
-        <strong style="font-size: clamp(1.1rem, 4vw, 1.3rem); color: #555;">Our Mission</strong>
-        <p>
-          Our mission at Forever is to empower customers with choice, convenience, and confidence. We're dedicated
-          to providing a seamless shopping experience that exceeds expectations, from browsing and ordering to
-          delivery and beyond.
-        </p>
-      </div>
 
-    </div>
+      <!-- First Section -->
+      <div class="flex items-center justify-around gap-4 py-8 flex-wrap">
 
-    <!-- Second Section: Why Choose Us -->
-    <div style="padding: 5rem 0; display: flex; flex-direction: column; gap: 2rem;">
-
-      <div style="color: #555; font-size: clamp(1.5rem, 8vw, 2.5rem);">
-        <p>Why <span style="color: black;">Choose Us</span></p>
-      </div>
-
-      <!-- 3 Cards -->
-      <div style="width: 100%; min-height: 400px; border: 1px solid #ddd; display: flex; flex-wrap: wrap;">
-
-        <!-- Card 1 -->
-        <div style="display: flex; justify-content: center; flex-direction: column; gap: 1rem; line-height: 1.5rem; color: #555; width: 100%; flex: 1; border-right: 1px solid #ddd; padding: clamp(1rem, 4vw, 6rem);">
-          <strong style="font-size: 1.2rem; font-weight: 500; color: #333;">Quality Assurance:</strong>
-          <p>We meticulously select and vet each product to ensure it meets our stringent quality standards.</p>
+        <!-- Image -->
+        <div class="w-full max-w-[500px]">
+          <img src="/assets/images/about_img.png" alt="About Us" class="w-full h-full object-cover">
         </div>
 
-        <!-- Card 2 -->
-        <div style="display: flex; justify-content: center; flex-direction: column; gap: 1rem; line-height: 1.5rem; color: #555; width: 100%; flex: 1; border-right: 1px solid #ddd; padding: clamp(1rem, 4vw, 6rem);">
-          <strong style="font-size: 1.2rem; font-weight: 500; color: #333;">Convenience:</strong>
-          <p>With our user-friendly interface and hassle-free ordering process, shopping has never been easier.</p>
-        </div>
+        <!-- Text -->
+        <div class="w-full max-w-[750px] flex flex-col gap-8 leading-6 text-gray-600">
 
-        <!-- Card 3 -->
-        <div style="display: flex; justify-content: center; flex-direction: column; gap: 1rem; line-height: 1.5rem; color: #555; width: 100%; flex: 1; padding: clamp(1rem, 4vw, 6rem);">
-          <strong style="font-size: 1.2rem; font-weight: 500; color: #333;">Exceptional Customer Service:</strong>
-          <p>Our team of dedicated professionals is here to assist you the way, ensuring your satisfaction is our top priority.</p>
+          <p>
+            Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online.
+            Our journey began with a simple idea: to provide a platform where customers can easily discover, explore,
+            and purchase a wide range of products from the comfort of their homes.
+            <br><br>
+            Since our inception, we've worked tirelessly to curate a diverse selection of high-quality products that
+            cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer
+            an extensive collection sourced from trusted brands and suppliers.
+          </p>
+
+          <strong class="text-[clamp(1.1rem,4vw,1.3rem)] text-gray-600">
+            Our Mission
+          </strong>
+
+          <p>
+            Our mission at Forever is to empower customers with choice, convenience, and confidence. We're dedicated
+            to providing a seamless shopping experience that exceeds expectations, from browsing and ordering to
+            delivery and beyond.
+          </p>
+
         </div>
 
       </div>
+
+
+      <!-- Why Choose Us -->
+      <div class="py-20 flex flex-col gap-8">
+
+        <div class="text-gray-600 text-[clamp(1.5rem,8vw,2.5rem)]">
+          <p>Why <span class="text-black">Choose Us</span></p>
+        </div>
+
+
+        <!-- Cards -->
+        <div class="w-full min-h-[400px] border border-gray-300 flex flex-wrap">
+
+          <!-- Card 1 -->
+          <div
+            class="flex flex-col justify-center gap-4 leading-6 text-gray-600 w-full flex-1 border-r border-gray-300 p-[clamp(1rem,4vw,6rem)]">
+            <strong class="text-[1.2rem] font-medium text-gray-700">
+              Quality Assurance:
+            </strong>
+            <p>
+              We meticulously select and vet each product to ensure it meets our stringent quality standards.
+            </p>
+          </div>
+
+
+          <!-- Card 2 -->
+          <div
+            class="flex flex-col justify-center gap-4 leading-6 text-gray-600 w-full flex-1 border-r border-gray-300 p-[clamp(1rem,4vw,6rem)]">
+            <strong class="text-[1.2rem] font-medium text-gray-700">
+              Convenience:
+            </strong>
+            <p>
+              With our user-friendly interface and hassle-free ordering process, shopping has never been easier.
+            </p>
+          </div>
+
+
+          <!-- Card 3 -->
+          <div
+            class="flex flex-col justify-center gap-4 leading-6 text-gray-600 w-full flex-1 p-[clamp(1rem,4vw,6rem)]">
+            <strong class="text-[1.2rem] font-medium text-gray-700">
+              Exceptional Customer Service:
+            </strong>
+            <p>
+              Our team of dedicated professionals is here to assist you the way, ensuring your satisfaction is our top
+              priority.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
-  </div>
+    <!-- Subscribe Section -->
 
-  <!-- Subscribe Section -->
-  <div style="background-color: #f5f5f5; padding: 4rem 1rem; text-align: center; margin-top: 2rem;">
-    <h2 style="font-size: clamp(1.2rem, 5vw, 2rem); color: #333; margin-bottom: 0.5rem;">Subscribe Now & Get <span style="color: #555;">20% Off</span></h2>
-    <p style="color: #888; margin-bottom: 1.5rem; font-size: 0.9rem;">Stay updated with our latest arrivals and exclusive offers.</p>
-    <form action="/subscribe" method="POST" style="display: flex; justify-content: center; gap: 0; max-width: 500px; margin-inline: auto;">
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid #ccc; outline: none; font-size: 0.9rem;"
-      />
-      <button
-        type="submit"
-        style="padding: 0.75rem 1.5rem; background-color: black; color: white; font-size: 0.85rem; font-weight: 600; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;"
-      >
-        Subscribe
-      </button>
-    </form>
-  </div>
+    <div class="bg-gray-100 py-16 px-4 text-center mt-8">
 
-</main>
+      <h2 class="text-[clamp(1.2rem,5vw,2rem)] text-gray-800 mb-2">
+        Subscribe Now & Get <span class="text-gray-600">20% Off</span>
+      </h2>
 
-<%- include('../partials/footer') %>
+      <p class="text-gray-500 mb-6 text-sm">
+        Stay updated with our latest arrivals and exclusive offers.
+      </p>
+
+      <div class="flex justify-center max-w-[500px] mx-auto flex-wrap">
+
+        <input type="email" name="email" placeholder="Enter your email"
+          class="flex-1 px-4 py-3 border border-gray-300 outline-none text-sm min-w-[200px]" />
+
+        <button type="submit"
+          class="px-6 py-3 bg-black text-white text-xs font-semibold uppercase tracking-wider hover:bg-gray-800 transition">
+          Subscribe
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <%- include('../partials/footer') %>
