@@ -1,25 +1,20 @@
-const getDB = require("../config/mongodb").getDB;
+const Product = require("../models/Product");
 
 exports.getHomePage = async (req, res) => {
+  try {
+    const beautyProducts = await Product.find({ category: "Beauty" }).limit(5);
 
-  const db = getDB();
+    const fashionProducts = await Product.find({ category: "Fashion" }).limit(5);
 
-  const beautyProducts = await db
-    .collection("products")
-    .find({ category: "Beauty" })
-    .limit(5)
-    .toArray();
+    res.render("pages/home", {
+      beautyProducts,
+      fashionProducts
+    });
 
-  const fashionProducts = await db
-    .collection("products")
-    .find({ category: "Fashion" })
-    .limit(5)
-    .toArray();
-
-  res.render("pages/home", {
-    beautyProducts,
-    fashionProducts
-  });
+  } catch (err) {
+    console.log(err);
+    res.send("Error loading homepage");
+  }
 };
 
 exports.getAboutPage = (req, res) => {
@@ -41,4 +36,3 @@ exports.getSignupPage = (req, res) => {
 exports.getFavouritePage = (req, res) => {
   res.render("pages/favourite");
 };
-
