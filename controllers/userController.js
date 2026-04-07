@@ -4,9 +4,7 @@ const bcrypt = require("bcrypt");
 // SIGNUP
 exports.postSignup = async (req, res) => {
   const db = getDB();
-
   const { name, email, password, confirmPassword } = req.body;
-
   let errors = {};
 
   if (!name) errors.name = "Name is required";
@@ -52,9 +50,7 @@ exports.postSignup = async (req, res) => {
 // SIGNIN
 exports.postSignin = async (req, res) => {
   const db = getDB();
-
   const { email, password } = req.body;
-
   let errors = {};
 
   if (!email) errors.email = "Email is required";
@@ -66,20 +62,18 @@ exports.postSignin = async (req, res) => {
 
   try {
     const user = await db.collection("users").findOne({ email });
-
     if (!user) {
       errors.email = "User not found";
       return res.render("pages/signin", { errors });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
-
     if (!isMatch) {
       errors.password = "Wrong password";
       return res.render("pages/signin", { errors });
     }
 
-    // ✅ SUCCESS LOGIN
+    // SUCCESS LOGIN
     res.render("pages/success", { message: "Login successful!" });
   } catch (err) {
     console.log(err);

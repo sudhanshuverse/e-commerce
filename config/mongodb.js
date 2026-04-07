@@ -1,20 +1,17 @@
 const mongo = require("mongodb");
 const MongoClient = mongo.MongoClient;
-
 const MONGO_URL = "mongodb://127.0.0.1:27017";
-
 let _db;
 
 const mongoConnect = (callback) => {
   MongoClient.connect(MONGO_URL)
     .then(client => {
-      console.log("✅ MongoDB Connected");
-
+      console.log("MongoDB Connected");
       _db = client.db("ecommerce"); // database name
       callback();
     })
     .catch(err => {
-      console.log("❌ Connection failed:", err);
+      console.log("Connection failed:", err);
     });
 };
 
@@ -25,7 +22,4 @@ const getDB = () => {
   return _db;
 };
 
-module.exports = {
-  mongoConnect,
-  getDB   // ✅ VERY IMPORTANT
-};
+module.exports = { mongoConnect, getDB};

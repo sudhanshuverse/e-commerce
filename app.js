@@ -19,7 +19,7 @@ const homeRoutes = require("./routes/homeRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 const adminRoutes = require("./routes/adminRoutes");
-const authRoutes = require("./routes/authRoutes"); // ✅ make sure this file exists
+const authRoutes = require("./routes/authRoutes");
 
 // USING ROUTES
 app.use(homeRoutes);
@@ -36,6 +36,6 @@ app.use((req, res) => {
 // START SERVER ONLY AFTER DB CONNECTS
 mongoConnect(() => {
   app.listen(8000, () => {
-    console.log("🚀 Server running on http://localhost:8000");
+    console.log("Server running on http://localhost:8000");
   });
 });

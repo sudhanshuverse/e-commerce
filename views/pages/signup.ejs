@@ -1,12 +1,9 @@
 <%- include('../partials/header') %>
 
-
 <div class="min-h-screen flex items-center justify-center py-12 px-4">
   <div class="w-full max-w-md bg-[#f5f5f5] shadow-sm rounded-2xl p-8">
-
     <h2 class="text-2xl font-semibold text-gray-900 mb-4">Create Account</h2>
     <p class="text-sm text-gray-600 mb-6">Sign up to get started</p>
-
     <!-- Show error messages from server -->
     <% if (typeof errors !== 'undefined') { %>
       <% if (errors.name) { %>
@@ -25,55 +22,24 @@
 
     <form action="/signup" method="POST" class="space-y-4">
 
-      <!-- Name Field -->
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="John Doe"
-          value="<%= typeof values !== 'undefined' ? values.name : '' %>"
-          class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
+        <input type="text" name="name" placeholder="John Doe" value="<%= typeof values !== 'undefined' ? values.name : '' %>" class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400" />
       </div>
-
-      <!-- Email Field -->
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="you@gmail.com"
-          value="<%= typeof values !== 'undefined' ? values.email : '' %>"
-          class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
+        <input type="email" name="email" placeholder="you@gmail.com" value="<%= typeof values !== 'undefined' ? values.email : '' %>" class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"/>
       </div>
 
-      <!-- Password Field -->
      <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
         <div class="relative">
-          <input
-            type="password"
-            name="password"
-            id="adminPassword"
-            placeholder="Enter admin password"
-            class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10"
-            required
-            autocomplete="current-password"
-          />
+          <input type="password" name="password" id="adminPassword" placeholder="Enter admin password" class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 pr-10" required autocomplete="current-password"/>
           <!-- Toggle Password Visibility -->
-          <button
-            type="button"
-            onclick="togglePassword()"
-            class="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-700"
-            tabindex="-1"
-          >
+          <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-700" tabindex="-1">
             <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
             </svg>
           </button>
         </div>
@@ -82,31 +48,16 @@
       <!-- Confirm Password Field -->
       <div>
         <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Re-enter password"
-          class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
+        <input type="password" name="confirmPassword" placeholder="Re-enter password" class="w-full px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"/>
       </div>
 
       <!-- Submit Button -->
-      <button
-        type="submit"
-        class="w-full mt-2 bg-gray-900 hover:bg-gray-700 text-white font-medium py-2 rounded-md transition cursor-pointer"
-      >
-        Create Account
-      </button>
-
+      <button type="submit" class="w-full mt-2 bg-gray-900 hover:bg-gray-700 text-white font-medium py-2 rounded-md transition cursor-pointer">Create Account</button>
     </form>
-
-    <div class="text-center text-sm text-gray-600 mt-4">
-      Already have an account?
-      <a href="/signin" class="text-black hover:underline">Sign In</a>
-    </div>
-
+    <div class="text-center text-sm text-gray-600 mt-4"> Already have an account? <a href="/signin" class="text-black hover:underline">Sign In</a></div>
   </div>
 </div>
+
 
 
 <%- include('../partials/footer') %>

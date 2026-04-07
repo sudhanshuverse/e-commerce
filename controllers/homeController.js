@@ -38,7 +38,11 @@ exports.getSignupPage = (req, res) => {
   res.render("pages/signup");
 };
 
-exports.getFavouritePage = (req, res) => {
-  res.render("pages/favourite");
-};
+// controllers/homeController.js
 
+exports.getFavouritePage = (req, res) => {
+  const favourites = []; 
+  res.render("pages/favourite", {
+    favourites: favourites
+  });
+};

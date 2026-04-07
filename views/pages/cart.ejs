@@ -8,116 +8,64 @@
 
       <div class="text-center border-2 border-dashed p-10 rounded-xl">
         <p class="text-lg font-semibold mb-3">Your cart is empty</p>
-        <a href="/products" class="bg-black text-white px-6 py-3 rounded-lg">
-          Continue Shopping
-        </a>
+        <a href="/products" class="bg-black text-white px-6 py-3 rounded-lg">Continue Shopping</a>
       </div>
 
       <% } else { %>
-
         <div class="flex flex-col lg:flex-row gap-8">
-
           <!-- Cart Items -->
           <div class="flex-1 space-y-5">
-
             <% cartProducts.forEach(function(item){ %>
-
               <div class="flex flex-col sm:flex-row gap-4 border p-4 rounded-xl bg-white">
-
                 <!-- Product Image -->
                 <img src="<%= item.product.img %>" class="w-28 h-28 object-cover rounded-lg" />
-
                 <!-- Product Info -->
                 <div class="flex-1">
-
-                  <h2 class="font-bold text-lg">
-                    <%= item.product.name %>
-                  </h2>
-
-                  <p class="text-gray-500 text-sm">
-                    <%= item.product.category %>
-                  </p>
-
-                  <p class="font-semibold mt-2">
-                    &#8377; <%= item.product.price %>
-                  </p>
-
+                  <h2 class="font-bold text-lg"><%= item.product.name %></h2>
+                  <p class="text-gray-500 text-sm"><%= item.product.category %></p>
+                  <p class="font-semibold mt-2">&#8377; <%= item.product.price %></p>
                 </div>
-
                 <!-- Quantity Controls -->
                 <div class="flex flex-col items-end gap-3">
-
                   <div class="flex items-center border rounded-lg overflow-hidden">
-
                     <form action="/cart/decrease/<%= item.product._id %>" method="POST">
                       <button class="px-3 py-2 hover:bg-gray-200">-</button>
                     </form>
-
-                    <span class="px-4">
-                      <%= item.quantity %>
-                    </span>
-
+                    <span class="px-4"><%= item.quantity %></span>
                     <form action="/cart/add/<%= item.product._id %>" method="POST">
                       <button class="px-3 py-2 hover:bg-gray-200">+</button>
                     </form>
-
                   </div>
-
-                  <button onclick="removeItem('<%= item.product._id %>')" class="text-red-500 text-sm hover:underline">
-                    Remove
-                  </button>
-
+                  <button onclick="removeItem('<%= item.product._id %>')" class="text-red-500 text-sm hover:underline">Remove</button>
                 </div>
-
               </div>
-
-              <% }) %>
-
+            <% }) %>
           </div>
-
           <!-- Order Summary -->
           <div class="w-full lg:w-80 border rounded-xl p-6 h-fit bg-gray-50">
-
             <h2 class="text-xl font-bold mb-5">Order Summary</h2>
-
             <p class="flex justify-between mb-3">
               <span>Items</span>
-              <span>
-                <%= cartProducts.length %>
-              </span>
+              <span><%= cartProducts.length %></span>
             </p>
-
             <p class="flex justify-between mb-3">
               <span>Shipping</span>
               <span>&#8377; 70</span>
             </p>
-
             <hr class="my-4">
-
-            <button class="w-full bg-green-500 text-white py-3 rounded-xl">
-              Checkout
-            </button>
-
+            <button class="w-full bg-green-500 text-white py-3 rounded-xl">Checkout</button>
           </div>
-
         </div>
-
-        <% } %>
-
+      <% } %>
   </div>
 
   <script>
-
     async function removeItem(id) {
-
       await fetch("/cart/remove/" + id, {
         method: "DELETE"
       });
-
       location.reload();
-
     }
-
   </script>
 
   <%- include('../partials/footer') %>

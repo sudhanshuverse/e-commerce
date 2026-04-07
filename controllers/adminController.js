@@ -4,22 +4,15 @@ const getDB = require("../config/mongodb").getDB;
 
 
 exports.getDashboard = async (req, res) => {
-
     const db = getDB();
-
     const products = await db.collection("products").find().toArray();
-
     // group products by category
     const categories = {};
-
     products.forEach(product => {
-
         if (!categories[product.category]) {
             categories[product.category] = [];
         }
-
         categories[product.category].push(product);
-
     });
 
     // total products
@@ -39,17 +32,13 @@ exports.getDashboard = async (req, res) => {
 
 
 exports.getAddProduct = (req, res) => {
-
     res.render("admin/add-product");
-
 };
 
 
 
 exports.postAddProduct = async (req, res) => {
-
     const db = getDB();
-
     const product = {
         name: req.body.name,
         price: parseFloat(req.body.price),
@@ -61,31 +50,23 @@ exports.postAddProduct = async (req, res) => {
     };
 
     await db.collection("products").insertOne(product);
-
     res.redirect("/admin");
-
 };
 
 
 
 exports.getEditProduct = async (req, res) => {
-
     const db = getDB();
-
     const product = await db.collection("products").findOne({
         _id: new ObjectId(req.params.id)
     });
-
     res.render("admin/edit-product", { product });
-
 };
 
 
 
 exports.postUpdateProduct = async (req, res) => {
-
     const db = getDB();
-
     await db.collection("products").updateOne(
         { _id: new ObjectId(req.params.id) },
         {
@@ -98,21 +79,15 @@ exports.postUpdateProduct = async (req, res) => {
             }
         }
     );
-
     res.redirect("/admin");
-
 };
 
 
 
 exports.deleteProduct = async (req, res) => {
-
     const db = getDB();
-
     await db.collection("products").deleteOne({
         _id: new ObjectId(req.params.id)
     });
-
     res.redirect("/admin");
-
 };
